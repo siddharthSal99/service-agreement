@@ -4,21 +4,24 @@ let useNumberBulleting = true;
 const RenderElement = ({ element, parentType }) => {
     const renderChildren = (children) => {
         let els = (children || []).map((child, index) => (
-        <RenderElement key={index} element={child} parentType={element.type} />
+            <RenderElement key={index} element={child} parentType={element.type} />
         ));
         return els
     };
 
     const renderTextElement = (element) => {
         let style = {};
+        if (parentType === 'h4') {
+            style.fontWeight = 'normal';
+        }
         if (element.bold) {
-        style.fontWeight = 'bold';
+            style.fontWeight = 'bold';
         }
         if (element.underline) {
-        style.textDecoration = 'underline';
+            style.textDecoration = 'underline';
         }
         if (element.color) {
-        style.color = element.color;
+            style.color = element.color;
         }
         return <span style={style}>{element.text}</span>;
     };
@@ -42,9 +45,9 @@ const RenderElement = ({ element, parentType }) => {
         case 'h4':
             return <h4>{renderChildren(element.children, elementType)}</h4>;
         case 'mention':
-        return <span style={{ 'backgroundColor': element.color }}>{renderChildren(element.children, elementType)}</span>;
+            return <span style={{ 'backgroundColor': element.color }}>{renderChildren(element.children, elementType)}</span>;
         default:
-        return renderTextElement(element);
+            return renderTextElement(element);
     }
 };
 
