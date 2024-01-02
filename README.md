@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Getting Started with my service agreement renderer
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -15,6 +15,6 @@ The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
 ## Relevant files:
-*`input.json` contains the html document structure to be rendered
-*`App.js` reads the input.json structure and passes it to the `DocumentRenderer` to be rendered
-*`DocumentRenderer.js` has the rendering logic 
+* `input.json` contains the html document structure to be rendered
+* `App.js` reads the input.json structure and passes it to the `DocumentRenderer` to be rendered
+* `DocumentRenderer.js` has the rendering logic 
